@@ -4,26 +4,67 @@
 	<meta charset="utf-8"/>
 	<title>Pokemon IV Calculator -- Chris Yap</title>
 	<script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type = "text/javascript" src="client.js"></script>
-	<link rel="stylesheet" type="text/css" href="">
+	<script type = "text/javascript" src="pokeClient.js"></script>
+	<link rel="stylesheet" type="text/css" href="PokeCalc.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 
 </head>
 <body id = "foobar">
-	<center> <h1>League of Legends Summoner Lookup</h1></center>
+	<center> <h1>Pokemon IV Calculator</h1></center>
 	<a id="nav" href="../index.html" >Home</a>
-        <a id="nav" href="LoLLookup.html" class = "active">LoL Lookup</a>
+        <a id="nav" href="../league/LoLLookup.html">LoL Lookup</a>
 	<a id="nav" href="../SFFilm/FilmLocations.html">SF Film Locations</a>
+	<a id="nav" href="PokeCalc.html" class = "active">Pokemon IV Calc</a>
 
 	<hr>
 	<div id= "container">
-	<div id= "lookupSum">
-	<form name = "sumForm" id = "lookForm">
-                <p>Lookup a League of Legends player! <br>Enter here:</p>
-                <b>Summoner: </b>
-		<input type= "text" name= "sumName" placeHolder = "KireiAutumn"/><br>
-		<input type= "text" name= "hide" style = "display:none;"/>
-                <input type= "button" value= "Submit" onClick = "onClickLookup()" />
+	<div id= "lookupPoke">
+	<p>Determine a Pokemon's IVs <br>with their current stats!<br>Enter here:</p>
+	<form name = "pokeForm" id = "pokeForm">
+		<p>
+    			<label for="pokemon"><b>Pokemon: </b></label>
+    			<input id="pokemonInput" type="text" name="pokemon" placeHolder="KireiAutumn">
+  		</p>
+		<p>
+                        <label for="level"><b>Level: </b></label>
+                        <input id= "lvl" name="level" type="number" min="1" max= "99" value="50">
+		<p>
+                        <label for="health"><b>Hit Points: </b></label>
+                        <input id= "hp" name="health" type="number" min="1" max= "250" value="50">
+			<label id= "evLabel" for="healthEV"><b>EVs: </b></label>
+                        <input id= "hpEV" name="healthEV" type="number" min="0" max= "252" value="0">
+                </p>
+		<p>
+                        <label for="attack"><b>Attack: </b></label>
+                        <input id= "atk" name="attack" type="number" min="5" max= "190" value="50">
+			<label id= "evLabel" for="attackEV"><b>EVs: </b></label>
+                        <input id= "atkEV" name="attackEV" type="number" min="0" max= "252" value="0">
+                </p>
+		<p>
+                        <label for="defense"><b>Defense: </b></label>
+                        <input id= "def" name="defense" type="number" min="5" max= "230" value="50">
+			<label id= "evLabel" for="defenseEV"><b>EVs: </b></label>
+                        <input id= "defEV" name="defenseEV" type="number" min="0" max= "252" value="0">
+                </p>
+		<p>
+                        <label for="spAttack"><b>Sp. Attack: </b></label>
+                        <input id= "spAtk" name="spAttack" type="number" min="10" max= "194" value="50">
+			<label id= "evLabel" for="spAttackEV"><b>EVs: </b></label>
+                        <input id= "spAtkEV" name="spAttackEV" type="number" min="0" max= "252" value="0">
+                </p>
+		<p>
+                        <label for="spDefense"><b>Sp. Defense: </b></label>
+                        <input id= "spDef" name="spDefense" type="number" min="20" max= "230" value="50">
+			<label id= "evLabel" for="spDefenseEV"><b>EVs: </b></label>
+                        <input id= "spDefEV" name="spDefenseEV" type="number" min="0" max= "252" value="0">
+                </p>
+		<p>
+                        <label for="speed"><b>Speed: </b></label>
+                        <input id= "spd" name="speed" type="number" min="5" max= "180" value="50">
+			<label id= "evLabel" for="speedEV"><b>EVs: </b></label>
+                        <input id= "spdEV" name="speedEV" type="number" min="0" max= "252" value="0">
+                </p>
+                <input id="submitButton" type= "button" value= "Submit" onClick = "onClickCalculate()" />
         </form>
 	</div>
 	<div id= "user">

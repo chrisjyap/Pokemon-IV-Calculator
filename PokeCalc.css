@@ -1,0 +1,38 @@
+label{
+ display:inline-block;
+ width: 90px;
+}
+
+input{
+ width: 40px;
+}
+
+#evLabel{
+ dispaly:inline-block;
+ width: 40px;
+}
+
+#pokemonInput, #submitButton{
+ width: 100px;
+}
+#container{
+   height: 400px;
+   width: 100%;
+}
+
+#lookupPoke{
+position: relative;
+display: inline-block;
+width: 20%;
+margin-right: 50px;
+vertical-align: top;
+}
+
+
+#general{
+position:relative;
+display: inline-block;
+vertical-align: top;
+width:37%;
+}
+
