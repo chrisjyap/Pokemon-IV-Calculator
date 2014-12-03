@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Pokemon IV Calculator -- Chris Yap</title>
+	<script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type = "text/javascript" src="client.js"></script>
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="../main.css">
+
+</head>
+<body id = "foobar">
+	<center> <h1>League of Legends Summoner Lookup</h1></center>
+	<a id="nav" href="../index.html" >Home</a>
+        <a id="nav" href="LoLLookup.html" class = "active">LoL Lookup</a>
+	<a id="nav" href="../SFFilm/FilmLocations.html">SF Film Locations</a>
+
+	<hr>
+	<div id= "container">
+	<div id= "lookupSum">
+	<form name = "sumForm" id = "lookForm">
+                <p>Lookup a League of Legends player! <br>Enter here:</p>
+                <b>Summoner: </b>
+		<input type= "text" name= "sumName" placeHolder = "KireiAutumn"/><br>
+		<input type= "text" name= "hide" style = "display:none;"/>
+                <input type= "button" value= "Submit" onClick = "onClickLookup()" />
+        </form>
+	</div>
+	<div id= "user">
+		<table>
+			<thead>
+			<tr>
+				<th align="left"><img id ="icon"></img></th>
+				<th colspan="2" id="name"><h3></h3></th>
+			</tr>
+			<tbody>
+				<tr>
+					<td id ="normStats"></td>
+					<td id ="rankStats"></td>
+					<td id ="genRank"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div id = "general">
+		<div id= "statsBarContainer">
+			<div onclick ="setActive('rank')" id = "statsNav" name = "rank" class = "statsActive">Rank Stats</div>
+			<div onclick ="setActive('matchHistory')" id = "statsNav" name = "matchHistory">Match History</div>
+			<div onclick ="setActive('masteries')" id = "statsNav" name = "masteries">Masteries</div>
+			<div onclick ="setActive('runes')" id = "statsNav" name = "runes">Runes</div>
+			
+		</div>
+		<div id = "matchHistory" class = "hidden">
+			Match History uses too many requests and doubles the querying time. Considering leaving this section out.
+		</div>
+		<div id = "masteries" class ="hidden">
+			Masteries!		
+		</div>
+		<div id = "runes" class = "hidden">
+			<div id= "runeIdBar"> 
+			
+			</div>
+			Runes!
+		</div>
+		<div id = "rank">
+		</div>
+	</div>
+	</div>
+	<hr>
+</body>
+</html>
+
