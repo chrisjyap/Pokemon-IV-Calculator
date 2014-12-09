@@ -23,7 +23,7 @@
 	<form name = "pokeForm" id = "pokeForm">
 		<p>
     			<label for="pokemon"><b>Pokemon: </b></label>
-    			<input id="pokemonInput" type="text" name="pokemon" placeHolder="KireiAutumn">
+    			<input id="pokemonInput" type="text" name="pokemon" placeHolder="Mew">
   		</p>
 		<p>
                         <label for="level"><b>Level: </b></label>
@@ -64,6 +64,36 @@
 			<label id= "evLabel" for="speedEV"><b>EVs: </b></label>
                         <input id= "spdEV" name="speedEV" type="number" min="0" max= "252" value="0">
                 </p>
+		<p>
+			<label><b>Nature: </b></label>
+			<select id= "natureInput">
+				<option value="hardy">Hardy</option>
+				<option value="lonely">Lonely</option>
+				<option value="brave">Brave</option>
+				<option value="adamant">Adamant</option>
+				<option value="naughty">Naughty</option>
+				<option value="bold">Bold</option>
+				<option value="docile">Docile</option>
+				<option value="relaxed">Relaxed</option>
+				<option value="impish">Impish</option>
+				<option value="lax">Lax</option>
+				<option value="timid">Timid</option>
+				<option value="hasty">Hasty</option>
+				<option value="serious">Serious</option>
+				<option value="jolly">Jolly</option>
+				<option value="naive">Naive</option>
+				<option value="modest">Modest</option>
+				<option value="mild">Mild</option>
+				<option value="quiet">Quiet</option>
+				<option value="bashful">Bashful</option>
+				<option value="rash">Rash</option>
+				<option value="calm">Calm</option>
+				<option value="gentle">Gentle</option>
+				<option value="sassy">Sassy</option>
+				<option value="careful">Careful</option>
+				<option value="quirky">Quirky</option>
+			</select>
+		</p>
                 <input id="submitButton" type= "button" value= "Submit" onClick = "onClickCalculate()" />
         </form>
 	</div>

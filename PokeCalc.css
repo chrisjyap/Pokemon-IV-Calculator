@@ -12,11 +12,11 @@ input{
  width: 40px;
 }
 
-#pokemonInput, #submitButton{
+#pokemonInput, #submitButton, #natureInput{
  width: 100px;
 }
 #container{
-   height: 400px;
+   height: 450px;
    width: 100%;
 }
 
