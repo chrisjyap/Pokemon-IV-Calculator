@@ -22,7 +22,7 @@ function onClickCalculate(){
         var spDefenseEV= parseInt($('#spDefEV').val());
         var speed = parseInt($('#spd').val());
         var speedEV= parseInt($('#spdEV').val());
-	
+		
 	if( (typeof(pokemon) != 'undefined' && pokemon.length>= 3) && typeNumCheck(level, 1, 99)
 			&& typeNumCheck(health, 1, 500) && typeNumCheck(healthEV, 0, 252) 
 			&& typeNumCheck(attack, 5, 500) && typeNumCheck(attackEV, 0, 252)
@@ -45,13 +45,17 @@ function onClickCalculate(){
 		data['spDefenseEV'] = spDefenseEV;
 		data['speed'] = speed;
 		data['speedEV'] = speedEV;
-		
-		$.ajax('http://64.71.177.103:8002', {
+		var selectEle = document.getElementById("natureInput");
+		var selectedNature = selectEle.options[selectEle.selectedIndex].value;
+		data['nature'] = selectedNature;
+
+		$.ajax('http://chrisyap.lab.he.net:8002', {
 			type: 'GET',
 			data: data,
 			dataType:"json",
 			success: function(response){
 				console.log(JSON.stringify(response));
+				setFields(response);
 			},	
 			error: function(req, status, err){
 				console.log("Yeah, no. POKEMON", status, err);
@@ -66,4 +70,16 @@ function onClickCalculate(){
 function typeNumCheck(stat, minStat, maxStat){
 	//console.log(typeof(stat) + " : " + stat + " : " + minStat + " : " + maxStat);
 	return (typeof(stat) == 'number' && stat >= minStat && stat <=maxStat);
+}
+
+function setFields(response){
+	document.getElementById("pokeIcon").src = response.pokeImage;
+	document.getElementById("name").innerHTML= '<h3>Name: '+ response.name +'</h3>';
+	document.getElementById("hpIV").innerHTML= response.health;
+	document.getElementById("atkIV").innerHTML= response.attack;
+	document.getElementById("defIV").innerHTML= response.defense;
+	document.getElementById("spAtkIV").innerHTML= response.spAttack;
+	document.getElementById("spDefIV").innerHTML= response.spDefense;
+	document.getElementById("spdIV").innerHTML= response.speed;
+
 }
